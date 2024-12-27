@@ -1,0 +1,62 @@
+﻿@using MVC_20211129078_OZANUYSAL.ViewModels
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<ProductModel>
+
+<body>
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">@item.Name</div>
+                    <div class="card-body">
+                        <h3>@item.Price.ToString("0.00 TL")</h3>
+                        <p>
+                            @item.Description
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="" class="btn btn-primary">İncele</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/sbadmin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/sbadmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/sbadmin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/sbadmin/js/sb-admin-2.min.js"></script>
+
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="~/Corona/dist/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/Corona/dist/assets/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="~/Corona/dist/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="~/Corona/dist/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/Corona/dist/assets/js/off-canvas.js"></script>
+    <script src="~/Corona/dist/assets/js/misc.js"></script>
+    <script src="~/Corona/dist/assets/js/settings.js"></script>
+    <script src="~/Corona/dist/assets/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/Corona/dist/assets/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+    @await Component.InvokeAsync("Notyf")
+</body>
+

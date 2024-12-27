@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVC_20211129078_OZANUYSAL.props" />
+</Project>
